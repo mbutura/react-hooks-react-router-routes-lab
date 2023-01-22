@@ -5,17 +5,18 @@ import Home from "./Home";
 import Actors from "./Actors";
 import Directors from "./Directors";
 import Movies from "./Movies";
-import { movies, actors, directors } from "../data"
 
 function App() {
-  return <div>{
-    <switch>
-      <route  path='/movies'><Movies movies={movies}/></route>
-      <route  path='/directors'><Directors directors={directors}/></route>
-      <route  path='/actors'><Actors actors={actors}/></route>
-      <route  path='/'><Home/></route>
-    </switch>
-    }</div>;
+  return(
+    <div>
+      <NavBar />
+      <Switch>
+        <Route  path='/movies'><Movies /></Route>
+        <Route  path='/directors'><Directors /></Route>
+        <Route  path='/actors'><Actors /></Route>
+        <Route  path='/'><Home /></Route>
+      </Switch>
+    </div>);
 }
 
 export default App;

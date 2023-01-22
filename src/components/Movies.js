@@ -1,18 +1,20 @@
 import React from "react";
+import { movies } from "../data";
 
-function Movies({movies}) {
-  const generateList = (genre) => <li>{genre}</li>;
-  return( 
+function Movies() {
+  const generateList = (item, idx) => <li key={idx}>{item}</li>;
+  return (
   <div>
     <h1>Movies Page</h1>
-    movies.map((movie) => 
-    {
-      <p>{movie.title}</p>
-      <p>{movie.time}</p>
-      (movie.genres.length !==0)&&<ul>
-      {movie.genres.map(generateList)
-      (entry.genres.length !==0)&&</ul>;
-    })
+    {movies.map((movie, idx)=>{
+      return(
+        <div key={idx}>
+          <p>{movie.title}</p>
+          <p>{movie.time}</p>
+          <ul>
+            {movie.genres.map(generateList)}
+          </ul>
+        </div>)})}
   </div>
   );
 }

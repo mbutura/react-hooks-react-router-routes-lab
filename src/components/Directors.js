@@ -1,19 +1,19 @@
 import React from "react";
 import { directors } from "../data";
 
-function Directors({directors}) {
+function Directors() {
+  const generateList = (item, idx) => <li key={idx}>{item}</li>;
   return (
   <div>
-    <h1>Directors page</h1>
-    {directors.map((director) => {
-      <div>
-        (director.movies.length !==0)&&<ul>
-          director.movies.map((movie) => {
-            <li>{movie}</li>
-          })
-        (director.movies.length !==0)&&</ul>
-      </div>
-    })}
+    <h1>Directors Page</h1>
+    {directors.map((director, idx) => {
+      return(
+        <div key={idx}>
+          <p>{director.name}</p>
+          <ul>
+            {director.movies.map(generateList)}
+          </ul>
+        </div>)})}
   </div>);
 }
 
